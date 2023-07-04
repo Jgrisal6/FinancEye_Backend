@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  source_name: MyString
+  value: 1.5
+  extra: false
+  date: 2023-07-04
+  currency: one
+
+two:
+  source_name: MyString
+  value: 1.5
+  extra: false
+  date: 2023-07-04
+  currency: two
