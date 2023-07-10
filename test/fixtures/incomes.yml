@@ -1,4 +1,16 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: incomes
+#
+#  id          :bigint           not null, primary key
+#  source_name :string
+#  value       :float
+#  extra       :boolean
+#  date        :date
+#  currency_id :bigint           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 
 one:
   source_name: MyString

@@ -49,6 +49,7 @@ gem 'simple_form'
 gem 'annotate'
 gem 'cocoon'
 gem 'letter_opener'
+gem 'roo'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

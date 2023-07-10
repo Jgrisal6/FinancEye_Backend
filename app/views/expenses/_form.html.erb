@@ -14,6 +14,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to "Back to expenses", expenses_path, class: "btn btn-outline-primary" %>
   </div>
 <% end %>

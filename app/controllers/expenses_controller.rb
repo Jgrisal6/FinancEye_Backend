@@ -4,6 +4,7 @@ class ExpensesController < ApplicationController
   # GET /expenses or /expenses.json
   def index
     @expenses = Expense.all
+    @expense = Expense.new
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -32,6 +33,12 @@ class ExpensesController < ApplicationController
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def expense_params
+    params.require(:expense).permit(:expense_name, :lender, :category, )
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
