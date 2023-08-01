@@ -3,7 +3,7 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+  <form class="form-inputs">
     <%= f.input :expense_name %>
     <%= f.input :value %>
     <%= f.input :date %>
@@ -11,10 +11,10 @@
     <%= f.association :lender %>
     <%= f.association :category %>
     <%= f.association :currency %>
-  </div>
+  </form>
 
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>
-    <%= link_to "Back to expenses", expenses_path, class: "btn btn-outline-primary" %>
+    <%= link_to "Back", expenses_path, class: "btn btn-outline-primary" %>
   </div>
 <% end %>

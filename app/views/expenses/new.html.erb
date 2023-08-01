@@ -1,12 +1,15 @@
-<div class="col-lg-8 mx-auto">
-<div class="card shadow">
-  <div class="card-header">
-    <h1 class="card-title">New expense</h1>
+<%= turbo_frame_tag 'expense_controller' do %>
+  <div class="col-lg-8 mx-auto">
+  <div class = "row mt-4 mb-4">
+    <div class="card shadow">
+      <div class="card-header">
+        <h1 class="card-title">New expense</h1>
+      </div>
+      <div class="card-body">
+        <%= render "form", expense: @expense %>
+      </div>
+    </div>
   </div>
-  <div class="card-body">
-    <%= render "form", expense: @expense %>
   </div>
-</div>
-</div>
-
+<% end %>
 
