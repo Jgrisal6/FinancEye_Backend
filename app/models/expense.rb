@@ -17,4 +17,6 @@ class Expense < ApplicationRecord
   belongs_to :lender
   belongs_to :category
   belongs_to :currency
+
+  accepts_nested_attributes_for :lender, reject_if: :all_blank, allow_destroy: true
 end
