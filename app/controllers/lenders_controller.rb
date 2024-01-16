@@ -25,9 +25,11 @@ class LendersController < ApplicationController
 
     respond_to do |format|
       if @lender.save
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('lenders_form', partial: 'lenders/form', locals: {lender: Lender.new}) }
         format.html { redirect_to lender_url(@lender), notice: "Lender was successfully created." }
         format.json { render :show, status: :created, location: @lender }
       else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('lenders_form', partial: 'lenders/form', locals: {lender: @lender})}
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @lender.errors, status: :unprocessable_entity }
       end
@@ -38,9 +40,11 @@ class LendersController < ApplicationController
   def update
     respond_to do |format|
       if @lender.update(lender_params)
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('lenders_form', partial: 'lenders/form', locals: {lender: Lender.new}) }
         format.html { redirect_to lender_url(@lender), notice: "Lender was successfully updated." }
         format.json { render :show, status: :ok, location: @lender }
       else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace('lenders_form', partial: 'lenders/form', locals: {lender: @lender})}
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @lender.errors, status: :unprocessable_entity }
       end
@@ -52,6 +56,7 @@ class LendersController < ApplicationController
     @lender.destroy
 
     respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(@lender) }
       format.html { redirect_to lenders_url, notice: "Lender was successfully destroyed." }
       format.json { head :no_content }
     end
